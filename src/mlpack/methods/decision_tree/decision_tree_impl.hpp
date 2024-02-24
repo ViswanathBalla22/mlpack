@@ -11,7 +11,7 @@
  */
 #ifndef MLPACK_METHODS_DECISION_TREE_DECISION_TREE_IMPL_HPP
 #define MLPACK_METHODS_DECISION_TREE_DECISION_TREE_IMPL_HPP
-
+.
 #include "decision_tree.hpp"
 
 namespace mlpack {
