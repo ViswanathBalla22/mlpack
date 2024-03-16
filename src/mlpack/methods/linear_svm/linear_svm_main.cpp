@@ -15,6 +15,7 @@
 #define BINDING_NAME linear_svm
 
 #include <mlpack/core/util/mlpack_main.hpp>
+#include <mlpack/core/util/size_checks.hpp>
 
 #include "linear_svm.hpp"
 
@@ -278,11 +279,8 @@ void BINDING_FUNCTION(util::Params& params, util::Timers& timers)
   if (params.Has("training") && params.Has("labels"))
   {
     rawLabels = std::move(params.Get<arma::Row<size_t>>("labels"));
-    if (trainingSet.n_cols != rawLabels.n_cols)
-    {
-      Log::Fatal << "The labels must have the same number of points as the "
-          << "training dataset." << endl;
-    }
+         util::CheckSameSizes(trainingSet, rawLabels, "YourMethodName", "trainingSet", "rawLabels");
+
   }
   else if (params.Has("training"))
   {
