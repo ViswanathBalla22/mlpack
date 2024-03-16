@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -ftemplate-depth=1000 -Wno-unused-function -O3 -Wno-unknown-pragmas   CMakeFiles/mlpack_image_converter.dir/preprocess/image_converter_main.cpp.o  -o ../../../bin/mlpack_image_converter  -lpthread /usr/lib/libarmadillo.so 

@@ -1,0 +1,6 @@
+Name: mlpack
+Description: scalable C++ machine learning library
+URL: http://www.mlpack.org/
+Version: 4.3.1
+Cflags:  -I/usr/local/include/
+Libs: -lpthread -larmadillo

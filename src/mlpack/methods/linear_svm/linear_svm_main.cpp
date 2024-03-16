@@ -15,7 +15,6 @@
 #define BINDING_NAME linear_svm
 
 #include <mlpack/core/util/mlpack_main.hpp>
-#include <mlpack/core/util/size_checks.hpp>
 
 #include "linear_svm.hpp"
 
@@ -279,7 +278,7 @@ void BINDING_FUNCTION(util::Params& params, util::Timers& timers)
   if (params.Has("training") && params.Has("labels"))
   {
     rawLabels = std::move(params.Get<arma::Row<size_t>>("labels"));
-         util::CheckSameSizes(trainingSet, rawLabels, "YourMethodName", "trainingSet", "rawLabels");
+          util::CheckSameSizes(trainingSet, rawLabels, "YourMethodName", "trainingSet", "rawLabels");
 
   }
   else if (params.Has("training"))
