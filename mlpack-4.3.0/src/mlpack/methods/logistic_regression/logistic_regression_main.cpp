@@ -326,17 +326,7 @@ void BINDING_FUNCTION(util::Params& params, util::Timers& timers)
     const arma::mat& testSet = params.Get<arma::mat>("test");
 
     // Checking the dimensionality of the test data.
-    if (testSet.n_rows != model->Parameters().n_cols - 1)
-    {
-      // Clean memory if needed.
-      const size_t trainingDimensionality = model->Parameters().n_cols - 1;
-      if (!params.Has("input_model"))
-        delete model;
-
-      Log::Fatal << "Test data dimensionality (" << testSet.n_rows << ") must "
-          << "be the same as the dimensionality of the training data ("
-          << trainingDimensionality << ")!" << endl;
-    }
+      util::CheckSameDimensionality(testSet, trainingDimensionality, "YourFunctionName", "test");
 
     // We must perform predictions on the test set.  Training (and the
     // optimizer) are irrelevant here; we'll pass in the model we have.
